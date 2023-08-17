@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import Form from './components/Form';
 import LoadingSkeleton from './components/LoadingSkeleton';
-import { AccessibilityIssuesContext } from './context/issuesContext';
+import { AccessibilityIssuesContext } from '../context/IssuesContext';
 import Results from './components/Results';
 
 function App() {

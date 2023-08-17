@@ -1,5 +1,5 @@
 import { BsCodeSlash } from 'react-icons/bs';
-import { AccessibilityIssuesContext } from '../context/issuesContext';
+import { AccessibilityIssuesContext } from '../context/IssuesContext';
 
 const Card = ({ issue }) => {
     const { escapeHTML } = AccessibilityIssuesContext();
