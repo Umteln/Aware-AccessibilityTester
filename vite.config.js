@@ -5,8 +5,6 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
     plugins: [react()],
     define: {
-        VITE_ACCESSIBILITY_API_KEY: `"${
-            import.meta.env.VITE_ACCESSIBILITY_API_KEY
-        }"`,
+        __API_KEY__: JSON.stringify(import.meta.env.VITE_ACCESSIBILITY_API_KEY),
     },
 });
