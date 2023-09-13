@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import Form from './components/Form';
 import LoadingSkeleton from './components/LoadingSkeleton';
-import { AccessibilityIssuesContext } from '../context/IssuesContext';
+import { AccessibilityIssuesContext } from './context/IssuesContext';
 import Results from './components/Results';
 
 function App() {
@@ -33,7 +33,11 @@ function App() {
                         </div>
                         <div className='text-center'>
                             <h3 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
-                                Ensure accessibility for all
+                                Ensure{' '}
+                                <span className='border-b-[2px] border-yellow-300 '>
+                                    accessibility
+                                </span>{' '}
+                                for all
                             </h3>
                             <p className='mt-6 text-lg leading-8 text-gray-600'>
                                 Enter a URL below to check for any accessibile

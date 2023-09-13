@@ -8,8 +8,8 @@ const Navbar = () => {
                     href='/'
                     className='flex items-center'
                 >
-                    <FaRegLightbulb className='text-indigo-600 mr-1 hover:text-white' />
-                    <span className='self-center text-xl font-semibold whitespace-nowrap dark:text-white'>
+                    <FaRegLightbulb className='text-yellow-300 mr-2 hover:text-white text-2xl' />
+                    <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>
                         Aware
                     </span>
                 </a>
