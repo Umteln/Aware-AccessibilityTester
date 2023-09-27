@@ -24,7 +24,6 @@ export function IssuesContextProvider({ children }) {
 
         try {
             const response = await axios.get(url, options);
-            console.log(response.data);
             setIssues(response.data.issues);
             setTitle(response.data.documentTitle);
             setIsLoading(false);
@@ -49,6 +48,28 @@ export function IssuesContextProvider({ children }) {
             .replace(/'/g, '&#039;');
     };
 
+    const downloadIssues = (e) => {
+        e.preventDefault();
+        if (testUrl === '' || issues.length === 0) {
+            alert('CSV not available');
+        } else {
+            const csv = issues
+                .map((issue) => {
+                    return `${issue.code},${issue.message},${issue.context}`;
+                })
+                .join('\n');
+
+            const csvBlob = new Blob([csv], { type: 'text/csv' });
+            const csvUrl = URL.createObjectURL(csvBlob);
+            const link = document.createElement('a');
+            link.href = csvUrl;
+            link.download = 'Aware_Accessibility_issues' + Date.now() + '.csv';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    };
+
     return (
         <IssuesContext.Provider
             value={{
@@ -65,6 +86,7 @@ export function IssuesContextProvider({ children }) {
                 clearResults,
                 testAccessibility,
                 escapeHTML,
+                downloadIssues,
             }}
         >
             {children}
